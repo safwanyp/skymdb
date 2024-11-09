@@ -1,0 +1,48 @@
+{
+  "name": "skymdb",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "",
+  "license": "MIT",
+  "author": {
+    "name": "Safwan Parkar",
+    "url": "https://safwanyp.com"
+  },
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "build:lex": "./node_modules/.bin/lex gen-server ./src/lexicons ./domain/lexicons/*",
+    "lint": "eslint --fix .",
+    "format": "prettier --write .",
+    "prepare": "husky || true"
+  },
+  "dependencies": {
+    "@atproto/lexicon": "^0.4.2",
+    "@atproto/xrpc-server": "^0.7.1",
+    "@hono/node-server": "^1.13.5",
+    "hono": "^4.6.9",
+    "multiformats": "^13.3.1"
+  },
+  "devDependencies": {
+    "@atproto/lex-cli": "^0.5.1",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@eslint/js": "^9.14.0",
+    "@types/node": "^20.11.17",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.12.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "tsx": "^4.7.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.13.0"
+  }
+}
