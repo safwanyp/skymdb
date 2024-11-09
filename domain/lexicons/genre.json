@@ -1,0 +1,21 @@
+{
+  "lexicon": 1,
+  "id": "com.skymdb.genre",
+  "description": "Entity referring to a genre",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the genre"
+          }
+        }
+      }
+    }
+  }
+}

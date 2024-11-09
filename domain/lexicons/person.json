@@ -1,0 +1,45 @@
+{
+  "lexicon": 1,
+  "id": "com.skymdb.person",
+  "description": "Entity referring to a person",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": [
+          "name",
+          "birthDate",
+          "birthPlace",
+          "biography",
+          "createdAt"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the person"
+          },
+          "birthDate": {
+            "type": "string",
+            "description": "Birth date of the person",
+            "format": "datetime"
+          },
+          "birthPlace": {
+            "type": "string",
+            "description": "Birth place of the person"
+          },
+          "biography": {
+            "type": "string",
+            "description": "Biography of the person"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Creation date of the record",
+            "format": "datetime"
+          }
+        }
+      }
+    }
+  }
+}

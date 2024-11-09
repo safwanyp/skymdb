@@ -1,0 +1,89 @@
+{
+  "lexicon": 1,
+  "id": "com.skymdb.movie",
+  "description": "Entity referring to a movie",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": [
+          "adult",
+          "poster",
+          "originalLanguage",
+          "originalTitle",
+          "releaseDate",
+          "description",
+          "cast",
+          "director",
+          "writer",
+          "genre",
+          "createdAt"
+        ],
+        "properties": {
+          "adult": {
+            "type": "boolean",
+            "description": "Indicates if the movie is rated for adult content"
+          },
+          "poster": {
+            "type": "blob",
+            "description": "Poster of the movie",
+            "accept": ["image/png", "image/jpeg"],
+            "maxSize": 1048576
+          },
+          "originalLanguage": {
+            "type": "string",
+            "description": "Original language of the movie",
+            "minLength": 2,
+            "maxLength": 2
+          },
+          "originalTitle": {
+            "type": "string",
+            "description": "Original title of the movie"
+          },
+          "releaseDate": {
+            "type": "string",
+            "description": "Release date of the movie",
+            "format": "datetime"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the movie"
+          },
+          "cast": {
+            "type": "array",
+            "description": "List of actors in the movie",
+            "items": {
+              "type": "string",
+              "format": "tid"
+            }
+          },
+          "director": {
+            "type": "string",
+            "description": "Director of the movie",
+            "format": "tid"
+          },
+          "writer": {
+            "type": "string",
+            "description": "Writer of the movie",
+            "format": "tid"
+          },
+          "genre": {
+            "type": "array",
+            "description": "List of genres of the movie",
+            "items": {
+              "type": "string",
+              "format": "tid"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Date and time when the movie was added to the database",
+            "format": "datetime"
+          }
+        }
+      }
+    }
+  }
+}
