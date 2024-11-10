@@ -28,7 +28,7 @@ export interface Record {
   /** List of genres of the movie */
   genre: string[];
   /** Key used for extension of the movie - currently this is set to the movie's key (tid) */
-  contentRef?: string;
+  contentRef: string;
   /** Date and time when the movie was added to the database */
   createdAt: string;
   [k: string]: unknown;

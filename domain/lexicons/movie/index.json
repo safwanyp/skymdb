@@ -19,6 +19,7 @@
           "director",
           "writer",
           "genre",
+          "contentRef",
           "createdAt"
         ],
         "properties": {

@@ -51,6 +51,7 @@ export const schemaDict = {
             "director",
             "writer",
             "genre",
+            "contentRef",
             "createdAt",
           ],
           properties: {
