@@ -61,9 +61,10 @@ export const schemaDict = {
             },
             originalLanguage: {
               type: "string",
-              description: "Original language of the movie",
-              minLength: 2,
-              maxLength: 2,
+              description:
+                "Original language of the movie in i18n locale format (e.g. en-US)",
+              minLength: 5,
+              maxLength: 5,
             },
             originalTitle: {
               type: "string",
@@ -103,6 +104,12 @@ export const schemaDict = {
                 type: "string",
                 format: "tid",
               },
+            },
+            contentRef: {
+              type: "string",
+              description:
+                "Key used for extension of the movie - currently this is set to the movie's key (tid)",
+              format: "tid",
             },
             createdAt: {
               type: "string",

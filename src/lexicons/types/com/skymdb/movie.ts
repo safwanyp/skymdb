@@ -11,7 +11,7 @@ export interface Record {
   adult: boolean;
   /** Poster of the movie */
   poster: BlobRef;
-  /** Original language of the movie */
+  /** Original language of the movie in i18n locale format (e.g. en-US) */
   originalLanguage: string;
   /** Original title of the movie */
   originalTitle: string;
@@ -27,6 +27,8 @@ export interface Record {
   writer: string;
   /** List of genres of the movie */
   genre: string[];
+  /** Key used for extension of the movie - currently this is set to the movie's key (tid) */
+  contentRef?: string;
   /** Date and time when the movie was added to the database */
   createdAt: string;
   [k: string]: unknown;
