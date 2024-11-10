@@ -9,6 +9,8 @@ import { CID } from "multiformats/cid";
 export interface Record {
   /** Name of the genre */
   name: string;
+  /** Date and time of creation */
+  createdAt: string;
   [k: string]: unknown;
 }
 

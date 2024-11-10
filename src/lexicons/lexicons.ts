@@ -14,11 +14,16 @@ export const schemaDict = {
         key: "tid",
         record: {
           type: "object",
-          required: ["name"],
+          required: ["name", "createdAt"],
           properties: {
             name: {
               type: "string",
               description: "Name of the genre",
+            },
+            createdAt: {
+              type: "string",
+              format: "datetime",
+              description: "Date and time of creation",
             },
           },
         },
