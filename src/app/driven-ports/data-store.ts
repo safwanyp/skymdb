@@ -1,6 +1,10 @@
 import type { Record as MovieRecord } from "../../lexicons/types/com/skymdb/movie";
 import type { Record as GenreRecord } from "../../lexicons/types/com/skymdb/genre";
 import type { Record as PersonRecord } from "../../lexicons/types/com/skymdb/person";
+import type {
+  NodeSavedSession,
+  NodeSavedState,
+} from "@atproto/oauth-client-node";
 
 type MovieDataStore = {
   get: ({ id }: { id: string }) => Promise<MovieRecord>;
@@ -35,10 +39,33 @@ type PersonDataStore = {
   delete: ({ id }: { id: string }) => Promise<PersonRecord>;
 };
 
+type AuthDataStore = {
+  getAuthStateByKey: ({ key }: { key: string }) => Promise<NodeSavedState>;
+  setAuthState: ({
+    key,
+    state,
+  }: {
+    key: string;
+    state: NodeSavedState;
+  }) => Promise<NodeSavedState>;
+  deleteAuthState: ({ key }: { key: string }) => Promise<NodeSavedState>;
+
+  getAuthSessionByKey: ({ key }: { key: string }) => Promise<NodeSavedSession>;
+  setAuthSession: ({
+    key,
+    session,
+  }: {
+    key: string;
+    session: NodeSavedSession;
+  }) => Promise<NodeSavedSession>;
+  deleteAuthSession: ({ key }: { key: string }) => Promise<NodeSavedSession>;
+};
+
 type DataStore = {
   movie: MovieDataStore;
   genre: GenreDataStore;
   person: PersonDataStore;
+  auth: AuthDataStore;
 };
 
 export type { DataStore };

@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@atproto/lexicon": "^0.4.2",
+    "@atproto/oauth-client-node": "^0.2.0",
     "@atproto/xrpc-server": "^0.7.1",
     "@hono/node-server": "^1.13.5",
     "hono": "^4.6.9",
