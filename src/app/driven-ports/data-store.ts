@@ -11,14 +11,14 @@ type MovieDataStore = {
   getByGenre: ({ genre }: { genre: string }) => Promise<MovieRecord>;
   getByDirector: ({ director }: { director: string }) => Promise<MovieRecord>;
   getByWriter: ({ writer }: { writer: string }) => Promise<MovieRecord>;
-  getAll: ({ page }: { page?: number }) => Promise<MovieRecord>;
+  getAll: ({ page }: { page?: number }) => Promise<MovieRecord[]>;
   create: ({ data }: { data: unknown }) => Promise<MovieRecord>;
   update: ({ id, data }: { id: string; data: unknown }) => Promise<MovieRecord>;
   delete: ({ id }: { id: string }) => Promise<MovieRecord>;
 };
 
 type GenreDataStore = {
-  getAll: ({ page }: { page?: number }) => Promise<GenreRecord>;
+  getAll: ({ page }: { page?: number }) => Promise<GenreRecord[]>;
   create: ({ data }: { data: unknown }) => Promise<GenreRecord>;
   update: ({ id, data }: { id: string; data: unknown }) => Promise<GenreRecord>;
   delete: ({ id }: { id: string }) => Promise<GenreRecord>;
@@ -26,8 +26,8 @@ type GenreDataStore = {
 
 type PersonDataStore = {
   get: ({ id }: { id: string }) => Promise<PersonRecord>;
-  getAll: ({ page }: { page?: number }) => Promise<PersonRecord>;
-  getMovies: ({ id }: { id: string }) => Promise<PersonRecord>;
+  getAll: ({ page }: { page?: number }) => Promise<PersonRecord[]>;
+  getMovies: ({ id }: { id: string }) => Promise<PersonRecord[]>;
   create: ({ data }: { data: unknown }) => Promise<PersonRecord>;
   update: ({
     id,
@@ -65,7 +65,7 @@ type DataStore = {
   movie: MovieDataStore;
   genre: GenreDataStore;
   person: PersonDataStore;
-  auth: AuthDataStore;
+  auth?: AuthDataStore;
 };
 
 export type { DataStore };
